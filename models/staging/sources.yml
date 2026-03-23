@@ -1,0 +1,243 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Essa é a fonte do ERP."
+    database: ECOMMERCE_DB
+    schema: RAW
+    tables:
+      - name: CUSTOMER
+        description: "Tabela de clientes."
+        columns:
+          - name: customer_id
+            description: "ID do cliente."
+            tests:
+              - unique
+              - not_null
+          - name: customer_unique_id
+            description: "ID unico cliente."
+            tests:
+              - unique
+              - not_null
+          - name: customer_zip_code_prefix
+            description: "Prexio cliente"
+            tests:
+              - unique
+              - not_null
+          - name: customer_city
+            description: "Cidade do cliente"
+            tests:
+              - unique
+              - not_null
+          - name: customer_state
+            description: "Estado do cliente"
+            tests:
+              - unique
+              - not_null
+      - name: ORDERS
+        description: "Tabela de pedidos."
+        columns:
+          - name: order_id
+            description: "ID do pedido."
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: "ID do cliente."
+            tests:
+              - unique
+              - not_null
+          - name: order_status
+            description: "Status."
+            tests:
+              - unique
+              - not_null
+          - name: order_purchase_timestamp
+            description: "Data da compra."
+            tests:
+              - unique
+              - not_null
+          - name: order_approved_at
+            description: "Data que foi aprovado o pedido."
+            tests:
+              - unique
+              - not_null
+          - name: order_delivered_customer_date
+            description: "Data que foi entregue o pedido."
+            tests:
+              - unique
+              - not_null
+      - name: PAYMENTS
+        description: "Tabela de pagamentos."
+        columns:
+          - name: order_id
+            description: "ID do pedido."
+            tests:
+              - unique
+              - not_null
+          - name: payment_sequential
+            description: "Sequencia pagamento."
+            tests:
+              - unique
+              - not_null
+          - name: payment_type
+            description: "Tipo de pagamento."
+            tests:
+              - unique
+              - not_null
+          - name: payment_installments
+            description: "Parcelas."
+            tests:
+              - unique
+              - not_null
+          - name: payment_value
+            description: "Valor de pagamento."
+            tests:
+              - unique
+              - not_null
+      - name: SELLERS
+        description: "Tabela de vendedores."
+        columns:
+          - name: seller_city
+            description: "Cidade do vendedor."
+            tests:
+              - unique
+              - not_null
+          - name: seller_id
+            description: "ID do vendedor."
+            tests:
+              - unique
+              - not_null
+          - name: seller_state
+            description: "Estado do vendedor."
+            tests:
+              - unique
+              - not_null
+          - name: seller_zip_code_prefix
+            description: "CEP do vendedor."
+            tests:
+              - unique
+              - not_null        
+      - name: ORDER_ITEMS
+        description: "Tabela de itens."
+        columns:
+          - name: order_id
+            description: "ID do pedido."
+            tests:
+              - unique
+              - not_null
+          - name: order_item_id
+            description: "Numero de item do produto."
+            tests:
+              - unique
+              - not_null
+          - name: product_id
+            description: "ID do produto."
+            tests:
+              - unique
+              - not_null
+          - name: seller_id
+            description: "ID do vendedor."
+            tests:
+              - unique
+              - not_null      
+          - name: shipping_limit_date
+            description: "Data limite."
+            tests:
+              - unique
+              - not_null 
+          - name: price
+            description: "Preco."
+            tests:
+              - unique
+              - not_null
+          - name: freight_value
+            description: "Valor do frete."
+            tests:
+              - unique
+              - not_null
+      - name: PRODUCTS
+        description: "Tabela de produtos."
+        columns:
+          - name: product_id
+            description: "ID do produto."
+            tests:
+              - unique
+              - not_null
+          - name: product_category_name
+            description: "Categoria do produto."
+            tests:
+              - unique
+              - not_null
+          - name: product_name_lenght
+            description: "Caracteres do produto."
+            tests:
+              - unique
+              - not_null
+          - name: product_description_lenght 
+            description: "Descricao quantidade de caracteres."
+            tests:
+              - unique
+              - not_null      
+          - name: product_photos_qty
+            description: "Quantidade de fotos do produto."
+            tests:
+              - unique
+              - not_null 
+          - name: product_weight_g
+            description: "Peso."
+            tests:
+              - unique
+              - not_null
+          - name: product_height_cm
+            description: "Altura em cm."
+            tests:
+              - unique
+              - not_null
+          - name: product_width_cm
+            description: "Largi"
+            tests:
+              - unique
+              - not_null
+      - name: CATEGORY_TRANSALATION
+        description: "Tabela de traducao de categorias."
+        columns:
+          - name: product_category_name
+            description: "Nome da categoria do produto."
+            tests:
+              - unique
+              - not_null
+          - name: product_category_name_english
+            description: "Categoria do produto em ingles."
+            tests:
+              - unique
+              - not_null
+
+      - name: GEOLOCATION
+        description: "Tabela de localizacao."
+        columns:
+          - name: geolocation_zip_code_prefix
+            description: "CEP."
+            tests:
+              - unique
+              - not_null
+          - name: geolocation_city
+            description: "Cidade."
+            tests:
+              - unique
+              - not_null
+          - name: geolocation_state
+            description: "Estado."
+            tests:
+              - unique
+              - not_null
+          - name: geolocation_lat
+            description: "Latitude."  
+            tests:
+              - unique
+              - not_null
+          - name: geolocation_lng
+            description: "Longitude."  
+            tests:
+              - unique
+              - not_null
