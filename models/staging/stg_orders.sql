@@ -1,6 +1,6 @@
 with ORDERS as (
     select
-    order_id 
+    order_id as pk_pedido
     , customer_id as fk_cliente
     , order_status 
     , cast(order_purchase_timestamp as date) as data_compra
