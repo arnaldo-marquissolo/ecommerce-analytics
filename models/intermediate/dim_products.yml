@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Dimensão relacionada aos produtos."
+    columns:
+      - name: pk_produto 
+        description: "Representa a chave primaria para o produto."
+        tests:
+          - unique
+          - not_null
+
+      - name: categoria_produto 
+        description: "Representa a catagoria do produto."
+        tests:
+          - not_null
+
+      - name: categoria_produto_ingles 
+        description: "Representa a categoria do produto em ingles."
+        tests:
+          - not_null
+
+      - name: qtde_caracteres_nome 
+        description: "Representa a quantidade de caracteres no nome do produto."
+        tests:
+          - not_null
+
+      - name: qtde_caracteres_descricao 
+        description: "Representa a descricao da quantidade de caracteres no nome do produto."
+        tests:
+          - not_null
+      
+      - name: qtde_fotos 
+        description: "Representa a quantidade de fotoss que o produto tem."
+        tests:
+          - not_null
+
+      - name: peso_g 
+        description: "Representa o peso que o produto tem."
+        tests:
+          - not_null
+      
+      - name: comprimento_cm 
+        description: "Representa o comprimento em centimetros que o produto tem."
+        tests:
+          - not_null
+
+      - name: altura_cm 
+        description: "Representa a altura em centimetros que o produto tem."
+        tests:
+          - not_null
+
+      - name: largura_cm 
+        description: "Representa a largura em centimetros que o produto tem."
+        tests:
+          - not_null

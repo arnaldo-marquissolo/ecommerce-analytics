@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimensão relacionada aos clientes."
+
+    columns:
+      - name: pk_cliente
+        description: "Representa a chave primária do cliente."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_unique_id
+        description: "Identificador único do cliente (não muda entre pedidos)."
+        tests:
+          - not_null
+
+      - name: customer_zip_code_prefix
+        description: "Representa o prefixo do CEP do cliente."
+        tests:
+          - not_null
+
+      - name: cidade_cliente
+        description: "Representa a cidade do cliente."
+        tests:
+          - not_null
+
+      - name: estado_cliente
+        description: "Representa o estado do cliente."
+        tests:
+          - not_null

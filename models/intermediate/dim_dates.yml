@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: "Dimensão relacionada às datas de compra."
+
+    columns:
+      - name: pk_data
+        description: "Representa a chave primária da dimensão de datas."
+        tests:
+          - unique
+          - not_null
+
+      - name: data_compra
+        description: "Representa a data da compra do pedido."
+        tests:
+          - not_null
+
+      - name: ano
+        description: "Representa o ano da data de compra."
+        tests:
+          - not_null
+
+      - name: mes
+        description: "Representa o mês da data de compra."
+        tests:
+          - not_null
+
+      - name: dia
+        description: "Representa o dia da data de compra."
+        tests:
+          - not_null
+
+      - name: trimestre
+        description: "Representa o trimestre da data de compra."
+        tests:
+          - not_null
+
+      - name: mes_par_impar
+        description: "Indica se o mês da data de compra é par ou ímpar."
+        tests:
+          - not_null
