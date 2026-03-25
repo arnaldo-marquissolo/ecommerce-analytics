@@ -1,0 +1,71 @@
+version: 2
+models:
+  - name: fact_orders
+    description: >
+      Tabela de dados relacionados a vendas, produtos, clientes, cartões de crédito, locais e datas.
+    columns:
+      - name: pk_pedido
+        description: Chave primária da tabela.
+        tests:
+          - unique
+          - not_null
+
+      - name: n_item_pedido
+        description: "Chave estrangeira referente a numero de itens no pedido."
+
+      - name: fk_cliente
+        description: "Chave estrangeira referenciando o id do cliente."
+
+      - name: fk_produto
+        description: "Chave estrangeira referenciando o produto."
+
+      - name: data_compra
+        description: "Chave estrangeira referenciando a data de compra do produto."
+
+      - name: data_entrega
+        description: "Chave estrangeira referenciando a data de entrega do produto."
+
+      - name: order_status
+        description: "Chave estrangeira referenciando o status da venda."
+
+      - name: categoria_produto
+        description: "Chave referenciando a categoria do produto."
+
+      - name: categoria_produto_ingles
+        description: "Chave que faz referencia a categoria do produto em ingles."
+
+      - name: customer_unique_id
+        description: "Chave referenciando o id do cliente."      
+
+      - name: customer_zip_code_prefix
+        description: "Chave contendo o CEP do cliente."
+
+      - name: cidade_cliente
+        description: "Chave contendo a cidade do cliente."
+
+      - name: estado_cliente
+        description: "Chave contendo o  estado do cliente."
+
+      - name: cep_vendedor
+        description: "Coluna que traz o CEP do vendedor se houver."
+
+      - name: cidade_vendedor
+        description: "Coluna que traz a cidade do vendedor se houver."
+
+      - name: estado_vendedor
+        description: "Coluna que traz o estado do vendedor se houver."
+
+      - name: valor_item
+        description: "Coluna que traz o valor do produto vendido."
+
+      - name: valor_frete
+        description: "Coluna que traz o valor do frete do produto vendido."
+
+      - name: valor_total_item
+        description: "Coluna que traz o valor total da compra do produto vendido."
+
+      - name: tipo_pagamento
+        description: "Coluna que mostra o tipo da pagemtno na compra."
+
+      - name: n_parcelas
+        description: "Traz o numero de parcelas da compra realzada."

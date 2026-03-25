@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_sellers
+    description: "Dimensão relacionada aos vendedores."
+    columns:
+      - name: pk_vendedor
+        description: "Representa a chave primaria para buscar o vendedor."
+        tests:
+          - unique
+          - not_null
+
+      - name: cep_vendedor
+        description: "Representa o cep do vendedor."
+        tests:
+          - not_null
+
+      - name: cidade_vendedor
+        description: "Representa as cdidades dos vendedores."
+        tests:
+          - not_null
+
+      - name: estado_vendedor
+        description: "Representa os estados dos vendedores."
+        tests:
+          - not_null
